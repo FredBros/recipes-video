@@ -1,0 +1,10 @@
+PRODUCTION :
+https://console.cloud.google.com/apis/credentials/oauthclient
+
+
+
+changer :
+--Origines JavaScript autorisées
+
+--URI de redirection autorisés -> https://{YOUR_DOMAIN}/api/auth/callback/google
+cf : https://next-auth.js.org/providers/google

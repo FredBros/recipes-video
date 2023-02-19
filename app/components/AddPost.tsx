@@ -17,7 +17,6 @@ const AddPost = () => {
     e.preventDefault();
     const data = await fetch("/api/createPost", {
       method: "POST",
-      //   body: JSON.stringify({ post }),
       body: JSON.stringify(post),
     });
     const res = await data.json();
@@ -25,36 +24,37 @@ const AddPost = () => {
     if (!res.ok) {
       console.log(res.message);
     }
-    // return res.json();
+    setPost({ id: "", title: "", content: "" });
   };
 
   return (
     <form onSubmit={submitPost}>
-      <input
-        placeholder="Type here"
-        className="input input-bordered w-full max-w-xs"
-        onChange={(e) =>
-          setPost((prevState) => {
-            return { ...prevState, title: e.target.value };
-          })
-        }
-        value={post.title}
-        type="text"
-      />
-      <input
-        placeholder="Type here"
-        className="input input-bordered w-full max-w-xs"
-        onChange={(e) =>
-          setPost((prevState) => {
-            return { ...prevState, content: e.target.value };
-          })
-        }
-        value={post.content!}
-        type="text"
-      />
-      <button type="submit" className="btn">
-        Make a post
-      </button>
+      <div className="flex flex-col gap-2">
+        <input
+          placeholder="Type here"
+          className="input input-bordered w-full max-w-xs"
+          onChange={(e) =>
+            setPost((prevState) => {
+              return { ...prevState, title: e.target.value };
+            })
+          }
+          value={post.title}
+          type="text"
+        />
+        <textarea
+          placeholder="Type here"
+          className="textarea textarea-bordered"
+          onChange={(e) =>
+            setPost((prevState) => {
+              return { ...prevState, content: e.target.value };
+            })
+          }
+          value={post.content!}
+        />
+        <button type="submit" className="btn">
+          Make a post
+        </button>
+      </div>
     </form>
   );
 };
