@@ -23,8 +23,8 @@ const Logged = ({image}:Props) => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href={"#"} className="justify-between">
-                Profile
+              <Link href={"/dashboard"} className="justify-between">
+                Dasboard
                 <span className="badge">New</span>
               </Link>
             </li>

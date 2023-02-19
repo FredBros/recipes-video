@@ -5,7 +5,7 @@ export type Post = {
   id: string;
   createdAt: string;
   updatedAt?: string;
-  content: string | null;
+  content?: string;
   user: {
     name: string;
     image: string;

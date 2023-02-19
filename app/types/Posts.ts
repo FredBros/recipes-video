@@ -1,5 +1,7 @@
 export type PostsType = {
   title: string;
+  url: string;
+  content?: string;
   id: string;
   createdAt: string;
   user: {

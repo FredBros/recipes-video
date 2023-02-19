@@ -15,6 +15,13 @@ const Nav = async () => {
           </Link>
         </div>
         {!session?.user && <Login />}
+        {session?.user && (
+          <Link href={"/addRecipe"}>
+            <button className="btn btn-primary normal-case text-sm">
+              Add new recipe
+            </button>
+          </Link>
+        )}
         {session?.user && <Logged image={session.user?.image || ""} />}
       </div>
     </nav>
